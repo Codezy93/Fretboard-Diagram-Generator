@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitar Fretboard Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Guitar Fretboard Generator</h1>
+        <form id="fretboardForm">
+            <input type="text" id="title" placeholder="Title" required>
+            <input type="number" id="frets" placeholder="Number of Frets" required>
+            <select id="mode">
+                <option value="sharp">Sharp Notes</option>
+                <option value="flat">Flat Notes</option>
+                <option value="flat">Chords</option>
+            </select>
+            <textarea id="mapping" placeholder='Mapping (JSON format)' required>{"E": [], "A": [], "D": [], "G": [], "B": [], "e": []}</textarea>
+            <button type="submit">Generate Fretboard</button>
+        </form>
+        <img id="fretboardImage" src="" alt="Fretboard will appear here">
+    </div>
+    <script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
+</body>
+</html>
